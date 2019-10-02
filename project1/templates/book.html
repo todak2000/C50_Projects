@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Book</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Exo&display=swap');
+        body{
+            margin: 0;
+            width: 100%;
+            height: 100vh;
+            font-family: "Exo", sans-serif;
+            color: #fff;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            overflow: hidden;
+        }
+        /* .body {
+            width: 100%;
+            position: absolute;
+            top: 35%;
+            text-align: center;
+        } */
+        .write {
+            width: 100%;
+            position: absolute;
+            top: 35%;
+            text-align: center;
+        }
+        h1 {
+            font-weight: 300;
+            
+        }
+        #welc{
+            text-align: right;
+            margin-right: 30px;
+        }
+        a,
+        a:hover {
+            text-decoration: none;
+            color: #ddd;
+        }
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        #logo{float:left; font-size:24px; text-transform:uppercase; color:#002e5b; font-weight:600; padding:20px 0px;}
+        nav{width:auto; float:right;}
+        nav ul{display:table; float:right;list-style-type: none;}
+        nav ul li{float:left;}
+        nav ul li:last-child{padding-right:0px;}
+        nav ul li a{color:#002e5b; font-size:18px; padding: 25px 20px; display:inline-block; transition: all 0.5s ease 0s;}
+        nav ul li a:hover{background-color:#002e5b; color:#fde428; transition: all 0.5s ease 0s;}
+        nav ul li a:hover i{color:#fde428; transition: all 0.5s ease 0s;}
+        nav ul li a i{padding-right:10px; color:#002e5b; transition: all 0.5s ease 0s;}
+
+        #book_details{
+          /* background-color: #ccc; */
+          /* position:absolute; */
+          line-height: 20px;
+          /* top:20%; */
+          width:40%;
+          height:100%;
+          /* margin:100px 30px; */
+          float: left;
+          font-family: "Exo", sans-serif;
+        }
+        #rightie ul{
+         list-style: none;
+         font-size:14px;
+         padding-left:10px;
+         margin-top:55px;
+        }
+        #rightie{
+         float: right;
+         width:30%;
+        }
+        #book_details ul li{
+         margin-bottom: 10px;
+         background-color: #232323;
+         padding:5px;
+         border-radius: 0 5px 5px 0;
+        }
+       
+        #review_details{
+          background-color: rgba(0,0, 0, 0.3);
+          border-radius: 10px;
+          /* position:absolute;
+          top:65%; */
+          float: right;
+          /* margin:100px 0; */
+          width:25%;
+          padding:10px;
+          height: 100%;
+          font-family: "Exo", sans-serif;
+        }
+        #reviews{
+          background-color: rgba(0,0, 0, 0.5);
+          border-radius: 10px;
+          /* position:absolute;
+          top:65%; */
+          float: right;
+          /* margin:100px 0; */
+          width:25%;
+          height: 100%;
+          padding:10px;
+         
+          font-family: "Exo", sans-serif;
+        }
+        #placeholder{
+          width:70%;
+          height:70vh;
+          background-color: #23d5ab;
+          float: left;
+        }
+        #flex{
+          display: flex;
+          justify-content: space-evenly;
+          width:100%;
+          height:auto;
+        }
+        textarea {
+          width: 100%;
+          height: 150px;
+          margin-bottom: 10px;
+          border:0;
+          font-size:13px;
+          border-radius: 10px;
+          padding:10px 0 10px 10px;
+          margin-left: -5px;
+          font-family: "Exo", sans-serif;
+        }
+        #score{
+          width:100px;
+          height:30px;
+          border:0;
+          margin-bottom: 5px;
+        }
+        #login{
+          font-size: 14px;
+          background-color: #3ca9e2;
+          color: #fff;
+          width: 100%;
+          height: 50px;
+          outline: none;
+          border: none;
+          font-family: "Exo", sans-serif;
+          /*cursor: pointer;*/
+          -webkit-transition: 0.5s all;
+          -ms-transition: 0.5s all;
+          transition: 0.5s all;
+          text-align: center;
+          letter-spacing: 1px;
+        }
+        .form-group{
+          padding:10px;
+        }
+        #yellow{
+          color:yellow;
+        }
+        #leftie{
+          width:100%;
+          height:auto;
+          background-color: rgba(255,0, 255, 0.3);
+          border-radius:5px;
+          padding:5px;
+          padding-left:20px;
+        }
+        #scorei{
+          float:right;
+          font-size:10px;
+          margin-top: -15px;
+          background-color: #002e5b;
+          padding:5px;
+        }
+        #list{
+          /* background-color:royalblue; */
+          padding:10px;
+          margin-bottom: 10px;
+          padding-right:50px;
+          list-style: none;
+        }
+        @media only screen and (max-width: 769px) {
+          body{
+            overflow: auto;
+          }
+          #placeholder{
+            display: none;
+          }
+          #rightie{
+          width:90%;
+          float:left;
+          }
+          #book_details{
+            width:100%;
+            height:auto;
+          }
+          #review_details {
+            background-color: transparent;
+               /*  border-radius: 10px;
+              position: absolute;
+              top: 65%;
+              float: right;
+              margin: 100px 0; */
+              width: 100%;
+              padding: 10px;
+              height:auto;
+              /* height: 100%;
+              font-family: "Exo", sans-serif; */
+          }
+          #reviews {
+              /* background-color: rgba(0,0, 0, 0.3);
+              border-radius: 10px;
+              position: absolute;
+              top: 65%;
+              float: right;
+              margin: 100px 0; */
+              width: 100%;
+              padding: 10px;
+              height:auto;
+              /* height: 100%;
+              font-family: "Exo", sans-serif; */
+          }
+          #flex {
+              display: block;
+              width: 100%;
+              height: 70vh;
+              padding-left: 10px;
+          }
+        }
+    </style>
+  </head>
+  <body>
+        <!-- <h1 id="welc">Welcome! {{message}} <h1> -->
+
+        <!-- <a href="{{ url_for('signup') }}">Sign Up</a> -->
+       <div class="body">
+            <nav>
+                <ul>
+                <li><a href="#logo"><i class="icon-home"></i>{{name}}</a></li>
+                <li><a href="{{ url_for('home') }}"><i class="icon-home"></i>Back</a></li>
+                <li><a href="{{ url_for('logout') }}"><i class="icon-user"></i>logout</a></li>
+                </ul>
+            </nav>
+            
+            <div id="flex">
+                <h1>{{message}}</h1>
+                <div id="book_details">
+                    <div id="placeholder"></div>
+                    <div id="rightie">
+                        <ul>
+                            <li>Title: <span id="yellow">{{ book.title }}</span></li>
+                            <li>Author: <span id="yellow">{{ book.author }}</span></li>
+                            <li>Published in: <span id="yellow">{{ book.year }}</span></li>
+                            <li>ISBN: <span id="yellow">{{ book.isbn }}</span></li>
+                            <li>Average rating: <span id="yellow">{{ count.average_rating }}</span></li>
+                            <li>Review Count: <span id="yellow">{{ count.reviews_count }}</span></li>
+                          </ul>
+                    </div>
+                </div>
+                
+                
+                <div id="reviews">
+                    <p><i>All reviews:</i></p>
+                    <ul>
+                      {% if not reviews %}
+                      <li><span id="yellow">No reviews written yet.</span></li>
+                      {% else %}
+                      {% for review in reviews %}
+                      <li id="list">
+                        <p>User# {{ review.user_id }} </p>
+                        <p id="leftie"> said:<br><span id="yellow">{{ review.text }}</span></p>
+                        <p id="scorei">Score: <span id="yellow">{{ review.score }}</span></p>
+                      </li>
+                      {% endfor %}
+                      {% endif %}
+                    </ul>
+                </div>
+
+                <div id="review_details">
+                    <h3>Write your own Review for <span id="yellow">{{ book.title }}</span></h3>
+                      <form action="{{ url_for('post_review') }}" method="post">
+                          <div class="form-group">
+                            <textarea style="text" name="review" placeholder="What did you think of this book? Write down your thoughts." ></textarea>
+                          </div>
+                          <div class="form-group">
+                              <label for="score" class="control-label">Your Score Ratings:</label>
+                            
+                            <select class="form-control" id="score" name="score">
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                            </select>
+                          </div>
+                        <div class="form-group">
+                          <button class="btn btn-primary" id="login" >Submit</button>
+                        </div>
+                      </form>
+                      
+                  </div>
+            </div>
+       </div>
+       
+  </body>
+</html>

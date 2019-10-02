@@ -1,0 +1,19 @@
+p {
+    // first we make all instances of this transparent. 
+    opacity: 0; 
+    // as we're using the same animation for each instance, call it here so we're not repeating it
+    animation: fadeInUp 1s ease-in-out 0s forwards;
+  
+    // then define the animation delay in each class
+    &.first {
+      animation-delay: 1s;
+      font-size: 40px !important;
+      color:#F5F5F5;
+    }
+    &.second {
+      animation-delay: 3s;
+      font-size: 16px !important;
+      color:#F5F5F5;
+    }
+    
+   }

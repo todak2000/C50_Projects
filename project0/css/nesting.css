@@ -1,0 +1,16 @@
+p {
+  opacity: 0;
+  animation: fadeInUp 1s ease-in-out 0s forwards;
+}
+p.first {
+  animation-delay: 1s;
+  font-size: 40px !important;
+  color: #F5F5F5;
+}
+p.second {
+  animation-delay: 3s;
+  font-size: 16px !important;
+  color: #F5F5F5;
+}
+
+/*# sourceMappingURL=nesting.css.map */

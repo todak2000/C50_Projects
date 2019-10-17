@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Todak Chat App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel= "stylesheet" type= "text/css" href= "{{url_for('static',filename='channel.css') }}"> 
+
+  </head>
+     
+      <body> 
+          <!-- HIDDEN HEADER -->
+          <header class="hide">
+              Logged in as <div id="dname">{{ name }}</div>
+          </header>
+          <!-- VISIBLE HEADER -->
+          <header>
+              <ul class="logo"><li><img src="{{ url_for('static', filename='todak1.png') }}" ></li></ul>
+              <nav>
+                  <ul>
+                  <li><a href="#logo" class="nohover">Welcome! {{name}}</a></li>
+                  <li><a href="{{ url_for('logout') }}"><img src="{{ url_for('static', filename='out.png') }}" width="25" style="float:left;"></a></li>
+                  </ul>
+            </nav>
+          </header>
+          <section id="chat_section">
+              <nav id="chat_nav">
+                <!-- current chat rooms -->
+                <p id="chanel_head"><img src="{{ url_for('static', filename='chat1.png') }}" width="25" style="float:left;"> <span id="space"> Chatting Channels</span></p>
+                    <table class="hoverTable" id="hoverTable">
+                </table>
+                  <!-- create new chat room -->
+                  <p id="chanel_head"><img src="{{ url_for('static', filename='chat3.png') }}" width="25" style="float:left;"> <span id="space"> Create new channel</span></p>
+                  <form id="new_channel"  style="margin-bottom:70px;">
+                  <input id="channel_name" type="text" name="new_channel" class="chn_name form__input" autocomplete="off" autofocus placeholder="new channel">
+                  <button id="submit" type="submit" style=" float:right;width:30%;font-size: 14px;background-color: #202222;color: #fff;height: 45px;outline: none;border: none; border-radius: 0 25px 25px 0;cursor: pointer;-webkit-transition: 0.5s all;-ms-transition: 0.5s all;transition: 0.5s all;text-align: center;font-family: Exo; letter-spacing: 1px;" >
+                  Create <img src="{{ url_for('static', filename='send.png') }}" width="25"></button>
+                  </form>
+                  <p>
+                      <p id="chanel_head"><img src="{{ url_for('static', filename='chat2.png') }}" width="25" style="float:left;"> <span id="space"> Direct Messages</span></p>
+                      <br>
+                    <table class="hoverTable" id="user_list">
+                </table>
+                    <p>
+                <button id="logout_button" class="hide" type=submit>Log Out</button>
+              
+              </nav>
+            <!-- message side -->
+              <article id="message_nav">
+                <h1 style="margin:0;"><img src="{{ url_for('static', filename='chat2.png') }}" width="45" style="float:right;"></h1><h4 id="message_header">  <span id="space"></span>Messages</h4>
+                <div id="chat_wrapper">
+                  <table class="hoverTable" id="message_list">
+                </table>
+              </div>
+                <form id="new_message">
+                  <textarea class="newchn_msg" id="message_text" class="form__input" placeholder="Enter message here" wrap="soft">
+              </textarea>
+                  <input type="hidden" value= {{ name }} id="displayname">
+                  <button id="msg_submit" type="submit" style=" float:right;width:30%;font-size: 14px;background-color: #07a556;color: #fff;height: 45px;outline: none;border: none; border-radius: 0 25px 25px 0;cursor: pointer;-webkit-transition: 0.5s all;-ms-transition: 0.5s all;transition: 0.5s all;text-align: center;font-family: Exo; letter-spacing: 1px;" >
+                    Send <img src="{{ url_for('static', filename='send.png') }}" width="25"></button>
+                </form>
+            
+                </article>
+            
+            </section>   
+            <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+    <script src="{{ url_for('static', filename='channels.js') }}"></script>
+
+    </body>
+</html>

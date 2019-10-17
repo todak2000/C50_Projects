@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Todak Chat App</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{url_for('static',filename='index.css') }}"> 
+	</head>
+	<body>
+		<fieldset id="login-form-wrap">
+			<img src="{{ url_for('static', filename='todak1.png') }}" >
+			<h2>Login</h2>
+			<form id="login_form" action="{{ url_for('flackchat') }}", method="post">
+				<div class="form-group">
+					<input class="form-control" type="text" name="displayname" placeholder="Enter username" required id="username"/>
+				</div>
+				<div class="form-group">
+					<button class="btn btn-primary" id="login" >Log in!</button>
+				</div>
+			</form>
+		</fieldset>
+	</body>
+</html>
